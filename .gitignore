@@ -1,6 +1,4 @@
 .env
-*.db
-chroma_store/
 venv/
 frontend/dist/
 __pycache__/
@@ -12,3 +10,4 @@ node_modules/
 dist/
 build/
 .vite/
+.vscode/
