@@ -367,7 +367,7 @@ Open [http://localhost:5173](http://localhost:5173) in your browser and start as
 | Variable | Default | Description |
 |---|---|---|
 | `OPENROUTER_API_KEY` | *(required)* | Your OpenRouter API key. Get one at [platform.openrouter.ai](https://openrouter.ai/). |
-| `OPENAI_MODEL` | `gemma-4-31b` | The chat model used to generate SQL. |
+| `OPENROUTER_MODEL` | `gemma-4-31b` | The chat model used to generate SQL. |
 | `DATABASE_URL` | `sqlite:///./data/olist.db` | SQLAlchemy connection string. Use `postgresql://...` for Postgres. |
 | `CHROMA_PERSIST_DIR` | `./chroma_store` | Directory where ChromaDB persists vector embeddings. |
 | `EMBEDDING_MODEL` | `text-embedding-3-small` | OpenAI embedding model used for both indexing and retrieval. |
