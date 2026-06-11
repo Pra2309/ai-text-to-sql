@@ -6,8 +6,6 @@ from dotenv import load_dotenv
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 load_dotenv(os.path.join(BASE_DIR, ".env"), override=True)
 
-print("🔥 LOADED KEY:", os.getenv("OPENROUTER_API_KEY"))
-
 import logging
 
 from fastapi import FastAPI, Request
