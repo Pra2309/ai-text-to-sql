@@ -3,6 +3,7 @@ services:
     name: text-to-sql-api
     runtime: python
     plan: free
+    region: singapore
 
     buildCommand: |
       pip install --upgrade pip
