@@ -31,7 +31,8 @@ class Base(DeclarativeBase):
 class FactOrders(Base):
     __tablename__ = "fact_orders"
 
-    order_id = Column(String(64), primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    order_id = Column(String(64), index=True)
     user_id = Column(String(64), ForeignKey("dim_users.user_id"), nullable=True, index=True)
     product_id = Column(String(64), ForeignKey("dim_products.product_id"), nullable=True, index=True)
     seller_id = Column(String(64), ForeignKey("dim_sellers.seller_id"), nullable=True, index=True)

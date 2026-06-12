@@ -175,7 +175,7 @@ def load_dim_sellers(sellers_df: pd.DataFrame, engine) -> None:
 def load_dim_geography(geo_df: pd.DataFrame, engine) -> None:
     """Load dim_geography from olist_geolocation_dataset.csv (deduplicated by zip+city)."""
     logger.info("Loading dim_geography (raw %d rows)...", len(geo_df))
-    geo_dedup = geo_df.drop_duplicates(subset=["geolocation_zip_code_prefix", "geolocation_city"])
+    geo_dedup = geo_df.drop_duplicates(subset=["geolocation_zip_code_prefix", "geolocation_city", "geolocation_state"])
     records = [
         {
             "zip_code_prefix": str(row["geolocation_zip_code_prefix"]).zfill(5),
@@ -328,7 +328,7 @@ def seed() -> None:
     load_dim_users(customers_df, engine)
     load_dim_products(products_df, engine)
     load_dim_sellers(sellers_df, engine)
-    load_dim_geography(geo_df, engine)
+    # load_dim_geography(geo_df, engine)
 
     # Load fact table
     load_fact_orders(orders_df, items_df, customers_df, engine)
